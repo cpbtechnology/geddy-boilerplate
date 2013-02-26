@@ -1,0 +1,49 @@
+//
+// layouts: home.scss
+//
+//
+
+// Variables
+$black: rgb(0, 0, 0);
+$darkGrey: lighten($black, 20%);
+$mediumGrey: lighten($black, 50%);
+$lightGrey: lighten($black, 75%);
+$pageWidth: 960px;
+
+body {
+	background: $darkGrey;
+	min-width: $pageWidth;
+}
+
+#main {
+	overflow: auto;
+	position: relative;
+}
+
+#content {
+	margin: 0 auto;
+	width: $pageWidth;
+	h1 {
+		color: $lightGrey;
+		font: bold 250% / 200% helvetica, arial, sans-serif;
+		margin-top: 100px;
+	}
+	p {
+		color: $mediumGrey;
+		font-size: 180%;
+	}
+}
+
+#fork-me {
+	@include sprite-background-image("forkme", $setHeight: true, $setWidth: true);
+	border: 0;
+	display: block;
+	position: absolute;
+	right: 0;
+	text-indent: -9999px;
+	top: 0;
+	&:hover {
+		@include sprite-background-position("forkme-hover");
+	}
+}
+

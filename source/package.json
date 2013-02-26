@@ -1,0 +1,21 @@
+{
+  "name": "geddy-boilerplate",
+  "version": "0.0.1",
+  "author": "",
+  "dependencies": {
+    "swig": "*",
+    "socket.io": "*",
+    "underscore": "*",
+    "grunt-beautify": "0.1.0",
+    "grunt-crusher": "0.1.0",
+    "grunt-jslint": "0.1.0",
+    "grunt-compass": "0.3.8",
+    "grunt-css": "0.3.2",
+    "grunt-contrib-requirejs": "0.1.0",
+    "grunt-contrib-yuidoc": "0.3.2"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": "0.8.x"
+  }
+}

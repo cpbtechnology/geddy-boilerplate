@@ -1,0 +1,24 @@
+//
+// style.scss
+//
+//
+
+@import "compass";
+@import "base/mixins";
+@import "base/webfonts";
+
+@media screen {
+	// Base Rules
+	// Layouts
+	// Section Modules
+	@import "base/global";
+	@import "base/reset";
+	@import "layouts/example";
+	@import "modules/example-view";
+}
+
+@media print {
+	// Print
+	@import "base/print";
+}
+
