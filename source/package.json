@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "author": "",
   "dependencies": {
+    "geddy": "git://github.com/cpbtechnology/geddy",
     "swig": "*",
     "socket.io": "*",
     "underscore": "*",

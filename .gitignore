@@ -5,3 +5,4 @@ source/node_modules
 *.DS_Store
 .sass-cache
 *.log
+/source/public/javascripts/generated/app.min.js
