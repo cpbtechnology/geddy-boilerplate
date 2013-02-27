@@ -38,4 +38,5 @@ router.get('/').to('Main.index');
 //   this.resource('countries');
 //   this.get('/print(.:format)').to('Hemispheres.print');
 // });
+router.resource('things');
 exports.router = router;
