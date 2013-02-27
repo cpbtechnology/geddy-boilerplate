@@ -19,6 +19,7 @@ module.exports = function(grunt) {
 	// Geddy app files
 	config.geddy_app = 'app';
 	config.geddy_config = 'config';
+	config.geddy_tests = 'test';
 
 	// Project configuration.
 	grunt.initConfig({
@@ -32,7 +33,7 @@ module.exports = function(grunt) {
 		},
 
 		'beautify': {
-			'files': [ config.javascripts + '/app/**/*.js', config.geddy_app + '/**/*.js', config.geddy_config + '/**/*.js' ]
+			'files': [ config.javascripts + '/app/**/*.js', config.geddy_app + '/**/*.js', config.geddy_config + '/**/*.js', config.geddy_tests + '/**/*.js' ]
 		},
 
 		'compass': require('./build/config/compass.js')(config),

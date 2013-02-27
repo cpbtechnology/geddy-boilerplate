@@ -1,4 +1,3 @@
-(function () {
 var Thing = function () {
 
 	this.defineProperties({
@@ -53,4 +52,4 @@ Thing.someStaticMethod = function () {
 Thing.someStaticProperty = 'YYZ';
 */
 
-Thing = geddy.model.register('Thing', Thing);}());
+Thing = geddy.model.register('Thing', Thing);
