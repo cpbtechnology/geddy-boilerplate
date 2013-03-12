@@ -31,7 +31,7 @@ define(function (require) {
 
 			view.exampleTemplate = swig.compile(App.templates.ExampleTemplate);
 			view.$el.append(view.exampleTemplate({
-				'url': 'https://github.com/cpbtechnology/US-boilerplate-backbonejs'
+				'url': 'https://github.com/cpbtechnology/boilerplate-frontend'
 			}));
 		}
 
