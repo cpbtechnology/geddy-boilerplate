@@ -2,21 +2,15 @@
  * @module view/SubView
  */
 
-define(function (require) {
+define(['underscore', 'backbone', 'swig', 'plugins/text!template/ExampleTemplate.html'], function (_, Backbone, swig, ExampleTemplate) {
 
 	'use strict';
 
-	var $ = require('jquery'),
-		_ = require('underscore'),
-		Backbone = require('backbone'),
-		App = require('global'),
-		Swig = require('swig');
-
 	return Backbone.View.extend({
 
-		'events': {},
+		"events": {},
 
-		'initialize': function (options) {
+		"initialize": function (options) {
 			var view = this;
 
 			_.bindAll(this);
@@ -26,12 +20,12 @@ define(function (require) {
 			log('Backbone : Global : SubView : Initialized');
 		},
 
-		'render': function () {
+		"render": function () {
 			var view = this;
 
-			view.exampleTemplate = swig.compile(App.templates.ExampleTemplate);
+			view.exampleTemplate = swig.compile(ExampleTemplate);
 			view.$el.append(view.exampleTemplate({
-				'url': 'https://github.com/cpbtechnology/boilerplate-frontend'
+				"url": "https://github.com/cpbtechnology/frontend-boilerplate"
 			}));
 		}
 

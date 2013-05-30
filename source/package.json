@@ -3,18 +3,21 @@
   "version": "0.0.1",
   "author": "",
   "dependencies": {
-    "geddy": "git://github.com/cpbtechnology/geddy",
+    "geddy": "https://github.com/mde/geddy/tarball/8eb04352f85bad26be2b8965e50197fc891c3f7c",
     "swig": "*",
     "socket.io": "*",
     "underscore": "*",
     "chai": "*",
-    "grunt-beautify": "0.1.0",
-    "grunt-crusher": "0.1.0",
-    "grunt-jslint": "0.1.0",
-    "grunt-compass": "0.3.8",
-    "grunt-css": "0.3.2",
+    "lodash": "1.1.1",
+    "grunt": "0.4.0",
+    "grunt-cli":"0.1.8",
+    "grunt-beautify": "https://nodeload.github.com/terryweiss/grunt-beautify/legacy.tar.gz/cabb6260342b407df15522df62e932389502d21b",
     "grunt-contrib-requirejs": "0.1.0",
-    "grunt-contrib-yuidoc": "0.3.2"
+    "grunt-contrib-stylus":"0.5.0",
+    "grunt-contrib-yuidoc": "0.3.2",
+    "grunt-contrib-watch": "0.4.0",
+    "grunt-contrib-jshint": "0.2.0",
+    "grunt-contrib-qunit": "0.2.0"
   },
   "devDependencies": {},
   "engines": {
