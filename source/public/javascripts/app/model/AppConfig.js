@@ -2,24 +2,19 @@
  * @module model/AppConfig
  */
 
-define(function (require) {
+define(['underscore', 'backbone'], function (_, Backbone) {
 
 	'use strict';
 
-	var $ = require('jquery'),
-		_ = require('underscore'),
-		Backbone = require('backbone'),
-		App = require('global');
-
 	return Backbone.Model.extend({
 
-		'defaults': {},
+		"defaults": {},
 
-		'initialize': function (options) {
+		"initialize": function (options) {
 			_.extend(this.defaults, options);
 		},
 
-		'propertyAsBool': function (prop) {
+		"propertyAsBool": function (prop) {
 
 			if (!this.get(prop)) {
 				return;
@@ -38,5 +33,4 @@ define(function (require) {
 			}
 		}
 	});
-
 });

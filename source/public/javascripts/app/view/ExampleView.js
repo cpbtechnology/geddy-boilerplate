@@ -2,20 +2,17 @@
  * @module view/ExampleView
  */
 
-define(function (require) {
+define(['jquery','underscore','backbone','view/SubView'], function ($, _, Backbone, SubView) {
 
 	'use strict';
 
-	var $ = require('jquery'),
-		_ = require('underscore'),
-		Backbone = require('backbone'),
-		App = require('global');
-
 	return Backbone.View.extend({
 
-		'events': {},
+		"events": {},
 
-		'initialize': function (options) {
+		"el": "#main",
+
+		"initialize": function (options) {
 			var view = this;
 
 			_.bindAll(this);
@@ -25,15 +22,12 @@ define(function (require) {
 			log('Backbone : Global : ExampleView : Initialized');
 		},
 
-		'render': function () {
+		"render": function () {
 			var view = this;
 
-			view.subview = new App.views.SubView({
-				'el': '#content'
+			view.subview = new SubView({
+				"el": "#content"
 			});
-
 		}
-
 	});
-
 });

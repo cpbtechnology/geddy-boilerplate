@@ -2,20 +2,15 @@
  * @module collection/ExampleCollection
  */
 
-define(function (require) {
+define(['backbone', 'model/ExampleModel'], function (Backbone) {
 
 	'use strict';
 
-	var $ = require('jquery'),
-		_ = require('underscore'),
-		Backbone = require('backbone'),
-		App = require('global');
-
 	return Backbone.Collection.extend({
 
-		'initialize': function () {
+		"initialize": function () {
 
-			this.model = App.models.ExampleModel;
+			this.model = ExampleModel;
 
 			log('Backbone : ExampleCollection : Initialized');
 

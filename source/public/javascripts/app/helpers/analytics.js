@@ -2,17 +2,11 @@
  * @module helpers/analytics
  */
 
-define(function (require) {
+define(['jquery', 'underscore'], function (require) {
 
 	'use strict';
 
-	var $ = require('jquery'),
-		_ = require('underscore'),
-		App = require('global'),
-		_$body = $(document.body),
-		self;
-
-	self = {
+	var Analytics = {
 
 		/**
 		 * Initializes analytics with the specified GA account.
@@ -20,7 +14,8 @@ define(function (require) {
 		 * @param account {String} Account ID
 		 * @param pageName {String} Page Name
 		 */
-		'initialize': function (options) {
+		"initialize": function (options) {
+
 			if (options.gaAccountId === undefined) {
 				return;
 			}
@@ -28,7 +23,7 @@ define(function (require) {
 			window._gaq = window._gaq || [];
 			window._gaq.push(['_setAccount', options.gaAccountId]);
 
-			self.delegateEvents(options.trackingMap);
+			Analytics.delegateEvents(options.trackingMap);
 			log('Analytics : Initialized');
 			return this;
 		},
@@ -38,7 +33,7 @@ define(function (require) {
 		 * @method Analytics.pageTrack
 		 * @param pageName {String} Name of page to be tracked
 		 */
-		'pageTrack': function (pageName) {
+		"pageTrack": function (pageName) {
 			if (pageName === undefined) {
 				return;
 			}
@@ -51,7 +46,7 @@ define(function (require) {
 		 * @method Analytics.customEventTrack
 		 * @param args {Array} Array of arguments for custom GA Event
 		 */
-		'customEventTrack': function (args) {
+		"customEventTrack": function (args) {
 			window._gaq.push(['_trackEvent', args[0], args[1], args[2]]);
 			return this;
 		},
@@ -60,7 +55,7 @@ define(function (require) {
 		 * Tracks Likes/Unlikes via the FB API's events.
 		 * @method Analytics.socialTrackFacebook
 		 */
-		'socialTrackFacebook': function () {
+		"socialTrackFacebook": function () {
 			FB.Event.subscribe('edge.create', function (targetUrl) {
 				if (_gaq === 'undefined') {
 					return;
@@ -80,7 +75,7 @@ define(function (require) {
 		 * Tracks Tweets via the twitter API.
 		 * @method Analytics.socialTrackTwitter
 		 */
-		'socialTrackTwitter': function () {
+		"socialTrackTwitter": function () {
 			function extractParamFromUri(uri, paramName) {
 
 				var query, parts, params, i;
@@ -120,7 +115,7 @@ define(function (require) {
 		},
 
 		/**
-		 * Creates a delegated event listener on the &lt;body&gt;
+		 * Creates a delegated event listener on the <body>;
 		 * and can listen to any type of event on any type of element.
 		 * The event handler is responsible for determining if the event
 		 * and element exist in a data dictionary (_trackingMap) and
@@ -128,7 +123,7 @@ define(function (require) {
 		 * @method Analytics.delegateEvents
 		 * @param map {Object} Delegate object
 		 */
-		'delegateEvents': function (map) {
+		"delegateEvents": function (map) {
 
 			var events = [],
 				event;
@@ -139,7 +134,7 @@ define(function (require) {
 				}
 			}
 
-			_$body.on(events.join(' ').toString(), 'div, object, span, p, a, form, input, li, img', function (e, altID) {
+			$('body').on(events.join(' ').toString(), 'div, object, span, p, a, form, input, li, img', function (e, altID) {
 				var event = (e.namespace) ? e.type + '.' + e.namespace : e.type,
 					link = e.currentTarget,
 					selector = altID || link.getAttribute('data-track') || link.id,
@@ -155,6 +150,5 @@ define(function (require) {
 		}
 	};
 
-	return self;
-
+	return Analytics;
 });

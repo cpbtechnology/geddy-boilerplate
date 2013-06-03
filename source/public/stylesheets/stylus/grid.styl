@@ -1,0 +1,42 @@
+
+
+getGridColumnWidth()
+	return (($gridWidth - (($gridColumns - 1) * $gridGutter)) / $gridColumns )
+
+gridContainer($center=true)
+	width $gridWidth
+	if $center
+		margin 0 auto
+
+gridSpan($columns=1, $setMargin=true)
+	float left
+	$w = ((getGridColumnWidth() * $columns) + ($gridGutter * ($columns - 1)))
+	if @padding-left
+		$w = $w - @padding-left
+	if @padding-right
+		$w = $w - @padding-right
+	if @border-left-width
+		$w = $w - @border-left-width
+	if @border-right-width
+		$w = $w - @border-right-width
+	width $w
+	if $setMargin
+		margin-right $gridGutter
+
+gridShift($columns, $direction=right, $method=margin)
+	if $direction != left && $direction != right
+		error('$direction must be left or right')
+
+	if $method != absolute && $method != relative && $method != margin
+		error('$method must be absolute, relative, or margin ')
+	
+	$factor = 1;
+	if $direction==left
+		$factor = -1
+
+	if $method==absolute || $method==relative
+		left ((getGridColumnWidth() * $columns) + ($gridGutter * ($columns - 1))) * $factor
+		position $method
+
+	if $method=='margin'
+		margin-left ((getGridColumnWidth() * $columns) + ($gridGutter * ($columns - 1))) * $factor

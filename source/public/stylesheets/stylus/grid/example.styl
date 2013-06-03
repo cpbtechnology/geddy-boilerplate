@@ -1,0 +1,28 @@
+@import '../grid.styl'
+
+$gridWidth = 940px
+$gridColumns = 12
+$gridGutter = 20px
+
+body
+.contain
+	gridContainer()
+
+.call-to-action
+	gridSpan(3)
+
+#sidebar
+	gridSpan(4, false) // do without the right margin
+
+blockquote
+	padding 8px       // for top and bottom
+	padding-left 8px
+	padding-right 8px // must explicitly state padding-left and padding-right for gridSpan to detect these values
+	border solid 1px #000 // same with border
+	border-left-width 1px
+	border-right-width 1px
+	gridSpan(4)      // will now adjust the width accounting for padding and border
+
+#logo
+	gridSpan(2, false); // dont set margin
+	gridShift(1, left, relative)

@@ -13,7 +13,7 @@ module.exports = function(config) {
 			'options': {
 				'name': 'app/main',
 				'baseUrl': config.javascripts,
-				'mainConfigFile': config.javascripts + '/app/config.js',
+				'mainConfigFile': config.javascripts + '/app/main.js',
 				// Exclusions from minconcat use empty:
 				'paths': {
 					'facebook': 'empty:',

@@ -2,27 +2,20 @@
  * @module router/AppRouter
  */
 
-define(function (require) {
+define(['backbone'], function (Backbone) {
 
 	'use strict';
 
-	var $ = require('jquery'),
-		_ = require('underscore'),
-		Backbone = require('backbone'),
-		App = require('global');
-
 	return Backbone.Router.extend({
 
-		initialize: function () {
+		"initialize": function () {
 			log('Backbone : Global : AppRouter : Initialized');
 		},
 
-		'routes': {
-			'': 'index'
+		"routes": {
+			"": "index"
 		},
 
-		'index': function () {}
-
+		"index": function () {}
 	});
-
 });

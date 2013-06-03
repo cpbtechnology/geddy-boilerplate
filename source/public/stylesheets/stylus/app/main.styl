@@ -1,0 +1,39 @@
+// app.css main styles
+
+// Variables
+$black = rgb(0, 0, 0)
+$darkGrey = lighten($black, 20%)
+$mediumGrey = lighten($black, 50%)
+$lightGrey = lighten($black, 75%)
+$gridWidth = 940px
+$gridColumns = 12
+$gridGutter = 20px
+
+global-reset() // global-reset is provided by nib https://github.com/visionmedia/nib which is included with grunt-contrib-stylus
+
+@import "../grid.styl"
+
+body
+html
+	background $darkGrey
+
+#content
+	gridContainer()
+	padding-top 200px
+	h1 
+		color $lightGrey
+		font bold 250% / 200% helvetica, arial, sans-serif
+	p 
+		color $mediumGrey
+		font-size 180%
+
+#fork-me
+	background url(/images/forkme.png)
+	border 0
+	display block
+	fixed top 0 right 0
+	height 149px
+	text-indent -9999px
+	width 149px
+	&:hover 
+		background url(/images/forkme-hover.png)
