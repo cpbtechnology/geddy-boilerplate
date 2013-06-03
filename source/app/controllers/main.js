@@ -15,16 +15,48 @@
  * limitations under the License.
  *
 */
+var strategies = require('../helpers/passport/strategies')
+  , authTypes = geddy.mixin(strategies, {local: {name: 'local account'}});;
 
 var Main = function () {
-	this.index = function (req, resp, params) {
-		params.fork_url = geddy.config.fork_url;
 
-		this.respond(params, {
-			format: 'html',
-			template: 'app/views/main/index'
-		});
-	};
+  this.index = function (req, resp, params) {
+    var self = this
+      , User = geddy.model.User;
+    User.first({id: this.session.get('userId')}, function (err, data) {
+      var params = {
+        user: null
+      , authType: null
+      };
+      if (data) {
+        params.user = data;
+        params.authType = authTypes[self.session.get('authType')].name;
+      }
+      self.respond(params, {
+        format: 'html'
+      , template: 'app/views/main/index'
+      });
+    });
+  };
+
+  this.login = function (req, resp, params) {
+    this.respond(params, {
+      format: 'html'
+    , template: 'app/views/main/login'
+    });
+  };
+
+  this.logout = function (req, resp, params) {
+    this.session.unset('userId');
+    this.session.unset('authType');
+    this.respond(params, {
+      format: 'html'
+    , template: 'app/views/main/logout'
+    });
+  };
+
 };
 
 exports.Main = Main;
+
+

@@ -1,5 +1,15 @@
-<h1><a href="{{mainsPath}}">Welcome To The CP+B Geddy &amp; Standards Boilerplate</a></h1>
-<a href="{{fork_url}}" id="fork-me">Fork me on Github</a>
-
-<p><strong>The template above was processed using swig on the back-end</strong></p>
-<hr />
+<!-- Lets talk about geddy -->
+<div class="hero-unit geddy-welcome-box">
+  {% if user %}
+    <h1>
+      Hello{% if user.givenName %}, {{ user.givenName }} {% endif %}
+    </h1>
+    <p>You've successfully logged in to this Geddy app (via {{ authType }}).</p>
+    <p><a href="/logout">Click here to log back out</a></p>
+  {% else %}
+    <h1>Hello, stranger</h1>
+    <p>You're not authenticated with this app.</p>
+    <p><a href="/users/add">Click here to create a user account.</a></p>
+    <p><a href="/login">Click here to log in with Facebook or Twitter.</a></p>
+  {% endif %}
+</div>

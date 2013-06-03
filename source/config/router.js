@@ -39,4 +39,15 @@ router.get('/').to('Main.index');
 //   this.get('/print(.:format)').to('Hemispheres.print');
 // });
 router.resource('things');
+
+router.get('/login').to('Main.login');
+router.get('/logout').to('Main.logout');
+router.post('/auth/local').to('Auth.local');
+router.get('/auth/twitter').to('Auth.twitter');
+router.get('/auth/twitter/callback').to('Auth.twitterCallback');
+router.get('/auth/facebook').to('Auth.facebook');
+router.get('/auth/facebook/callback').to('Auth.facebookCallback');
+router.get('/auth/yammer').to('Auth.yammer');
+router.get('/auth/yammer/callback').to('Auth.yammerCallback');
+router.resource('users');
 exports.router = router;
