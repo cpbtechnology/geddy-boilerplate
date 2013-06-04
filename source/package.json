@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "author": "",
   "dependencies": {
-    "geddy": "https://github.com/mde/geddy/tarball/8eb04352f85bad26be2b8965e50197fc891c3f7c",
+    "geddy": "https://github.com/mde/geddy/tarball/21441cb9a3b9ce47f432b9a4d60fd2d4ad066947",
     "swig": "*",
     "socket.io": "*",
     "underscore": "*",
