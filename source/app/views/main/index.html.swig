@@ -12,4 +12,5 @@
     <p><a href="/users/add">Click here to create a user account.</a></p>
     <p><a href="/login">Click here to log in with Facebook or Twitter.</a></p>
   {% endif %}
+  {{ partial("shared/partial_test", {blah: 'Blah Blah Blah'}) }}
 </div>

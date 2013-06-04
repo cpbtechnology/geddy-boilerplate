@@ -21,7 +21,7 @@ module.exports = function(config) {
 				config.stylesheets + '/scss/**/*.scss',
 				config.javascripts + '/app/**/*.js'
 			],
-			'tasks': ['compass:debug']
+			'tasks': ['requirejs']
 		}
 
 	};

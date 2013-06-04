@@ -1,0 +1,1 @@
+<p>Hello there!  I'm a partial that has data: {{blah}}</p>

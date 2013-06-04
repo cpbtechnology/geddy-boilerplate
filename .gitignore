@@ -6,3 +6,5 @@ source/node_modules
 .sass-cache
 *.log
 /source/public/javascripts/generated/app.min.js
+/source/public/stylesheets/generated/grid.css
+/source/public/stylesheets/generated/app.css
