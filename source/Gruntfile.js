@@ -41,7 +41,11 @@ module.exports = function(grunt) {
 
 		'jshint': require('./build/config/jshint.js')(config),
 
-		'watch': require('./build/config/watch.js')(config)
+		'nodemon': require('./build/config/nodemon.js')(config),
+
+		'watch': require('./build/config/watch.js')(config),
+
+		'concurrent': require('./build/config/concurrent.js')(config)
 
 	});
 
@@ -57,11 +61,13 @@ module.exports = function(grunt) {
 
 	// load grunt plugins
 	grunt.loadNpmTasks('grunt-beautify');
+	grunt.loadNpmTasks('grunt-concurrent');
 	grunt.loadNpmTasks('grunt-contrib-stylus');
 	grunt.loadNpmTasks('grunt-contrib-requirejs');
 	grunt.loadNpmTasks('grunt-contrib-yuidoc');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-qunit');
+	grunt.loadNpmTasks('grunt-nodemon');
 
 };
