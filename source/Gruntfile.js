@@ -56,6 +56,9 @@ module.exports = function(grunt) {
 	grunt.registerTask('docs', 'yuidoc');
 	grunt.registerTask('pretty-js', 'beautify');
 
+	// Compile and Start the development environment
+	grunt.registerTask('development', ['stylus:dev', 'concurrent:development'])
+
 	// load local tasks.
 	grunt.loadTasks('./build/tasks');
 
